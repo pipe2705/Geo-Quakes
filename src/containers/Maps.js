@@ -19,10 +19,11 @@ class Maps extends Component {
           {this.props.earthquakes.map((item, i) => {
             return (
               <Marker
+                title={item.properties.title}
                 key={i}
                 position={{
                   lat: item.geometry.coordinates[1],
-                  lng: item.geometry.coordinates[2]
+                  lng: item.geometry.coordinates[0]
                 }}
               />
             );
