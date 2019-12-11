@@ -16,7 +16,17 @@ class Maps extends Component {
           style={mapStyles}
           initialCenter={{ lat: 37.78, lng: -122.176 }}
         >
-          <Marker position={{ lat: 48.0, lng: -122.0 }} />
+          {this.props.earthquakes.map((item, i) => {
+            return (
+              <Marker
+                key={i}
+                position={{
+                  lat: item.geometry.coordinates[1],
+                  lng: item.geometry.coordinates[2]
+                }}
+              />
+            );
+          })}
         </Map>
       </div>
     );
