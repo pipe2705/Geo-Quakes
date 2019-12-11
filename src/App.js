@@ -4,10 +4,6 @@ import Maps from "./containers/Maps";
 //import the map container
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     titles: []
   };
