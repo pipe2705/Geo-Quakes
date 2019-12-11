@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Quakes from "./containers/Quakes";
+import Maps from "./containers/Maps";
+//import the map container
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +13,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("keyup", this.handleKeyUp);
-
+    // window.addEventListener("keyup", this.handleKeyUp);
     fetch(
       "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson"
     )
@@ -27,7 +28,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="mapContainer">...put Map Component here...</div>
+        <div className="mapContainer">
+          <Maps />
+        </div>
         <div className="quakeContainer">
           <h1>Earthquakes from the past week: </h1>
           <Quakes data={this.state.titles} />
